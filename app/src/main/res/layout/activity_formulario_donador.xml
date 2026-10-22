@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/formulario_donador"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToOutline="true"
+    android:background="#E0F8CB">
+
+    <!-- Fondos decorativos -->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circ1_arriba"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="@string/app_name" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circ2_medio"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:contentDescription="@string/app_name" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circ3_final"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="@string/app_name" />
+
+    <!-- Formulario principal con ScrollView -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:paddingTop="16dp"
+        android:paddingBottom="32dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:gravity="center_horizontal">
+
+            <!-- Logo -->
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/logo_inicio"
+                android:layout_marginBottom="12dp"
+                android:contentDescription="@string/app_name" />
+
+            <!-- Progreso de pasos -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_marginBottom="12dp"
+                android:paddingHorizontal="16dp">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="6dp"
+                    android:layout_weight="1"
+                    android:background="#F2BA11"
+                    android:layout_marginEnd="8dp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="6dp"
+                    android:layout_weight="1"
+                    android:background="#F2BA11"
+                    android:layout_marginEnd="8dp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="6dp"
+                    android:layout_weight="1"
+                    android:background="#D1E2BC" />
+            </LinearLayout>
+
+            <!-- Pill de paso -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PASO 2 DE 3   •   LLENA TUS DATOS"
+                android:textColor="#1F361F"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_pill_paso"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="6dp"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CREAR CUENTA"
+                android:textColor="#385B35"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Tarjeta contenedora del formulario -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#F5FCEE"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="1.5dp"
+                app:strokeColor="#F2BA11"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Badge de tipo -->
+                    <TextView
+                        android:id="@+id/tv_tipo_donador_badge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CUENTA\nDonador Regular"
+                        android:textColor="#1A1A1A"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:background="@drawable/bg_pill_paso"
+                        android:paddingHorizontal="24dp"
+                        android:paddingVertical="8dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- RUC -->
+                    <EditText
+                        android:id="@+id/et_ruc"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="RUC"
+                        android:background="#FFFFFF"
+                        android:paddingHorizontal="16dp"
+                        android:layout_marginBottom="12dp"
+                        android:textColor="#1A1A1A"
+                        android:textColorHint="#888888"
+                        android:textSize="14sp"
+                        android:inputType="number"
+                        android:autofillHints="number" />
+
+                    <!-- Razón Social -->
+                    <EditText
+                        android:id="@+id/et_razon_social"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Razón Social"
+                        android:background="#FFFFFF"
+                        android:paddingHorizontal="16dp"
+                        android:layout_marginBottom="12dp"
+                        android:textColor="#1A1A1A"
+                        android:textColorHint="#888888"
+                        android:textSize="14sp"
+                        android:inputType="text"
+                        android:autofillHints="organization" />
+
+                    <!-- Teléfono -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <EditText
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:text="+51"
+                            android:gravity="center"
+                            android:background="#FFFFFF"
+                            android:textColor="#1A1A1A"
+                            android:textSize="14sp"
+                            android:inputType="phone"
+                            android:layout_marginEnd="8dp"
+                            android:autofillHints="phone" />
+
+                        <EditText
+                            android:id="@+id/et_telefono"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="999888777"
+                            android:background="#FFFFFF"
+                            android:paddingHorizontal="16dp"
+                            android:textColor="#1A1A1A"
+                            android:textColorHint="#888888"
+                            android:textSize="14sp"
+                            android:inputType="phone"
+                            android:autofillHints="phone" />
+                    </LinearLayout>
+
+                    <!-- Nombre -->
+                    <EditText
+                        android:id="@+id/et_nombre"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Nombre"
+                        android:background="#FFFFFF"
+                        android:paddingHorizontal="16dp"
+                        android:layout_marginBottom="12dp"
+                        android:textColor="#1A1A1A"
+                        android:textColorHint="#888888"
+                        android:textSize="14sp"
+                        android:inputType="textPersonName"
+                        android:autofillHints="name" />
+
+                    <!-- Apellidos -->
+                    <EditText
+                        android:id="@+id/et_apellidos"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Apellidos"
+                        android:background="#FFFFFF"
+                        android:paddingHorizontal="16dp"
+                        android:layout_marginBottom="12dp"
+                        android:textColor="#1A1A1A"
+                        android:textColorHint="#888888"
+                        android:textSize="14sp"
+                        android:inputType="textPersonName"
+                        android:autofillHints="family_name" />
+
+                    <!-- Correo -->
+                    <EditText
+                        android:id="@+id/et_correo"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Correo electrónico"
+                        android:background="#FFFFFF"
+                        android:paddingHorizontal="16dp"
+                        android:layout_marginBottom="12dp"
+                        android:textColor="#1A1A1A"
+                        android:textColorHint="#888888"
+                        android:textSize="14sp"
+                        android:inputType="textEmailAddress"
+                        android:autofillHints="email" />
+
+                    <!-- Contraseña -->
+                    <EditText
+                        android:id="@+id/et_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Contraseña Segura"
+                        android:background="#FFFFFF"
+                        android:paddingHorizontal="16dp"
+                        android:layout_marginBottom="12dp"
+                        android:textColor="#1A1A1A"
+                        android:textColorHint="#888888"
+                        android:textSize="14sp"
+                        android:inputType="textPassword"
+                        android:autofillHints="password" />
+
+                    <!-- Repite Contraseña -->
+                    <EditText
+                        android:id="@+id/et_confirm_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Repite Contraseña Segura"
+                        android:background="#FFFFFF"
+                        android:paddingHorizontal="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:textColor="#1A1A1A"
+                        android:textColorHint="#888888"
+                        android:textSize="14sp"
+                        android:inputType="textPassword"
+                        android:autofillHints="password" />
+
+                    <!-- Términos -->
+                    <CheckBox
+                        android:id="@+id/cb_terminos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Al registrarme, declaro que soy mayor de edad, he leído y acepto los Términos y Condiciones y Políticas de Privacidad"
+                        android:textSize="11sp"
+                        android:textColor="#1A1A1A"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Texto de Alerta (Oculto por defecto) -->
+                    <TextView
+                        android:id="@+id/tv_error_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Error: Completa los campos solicitados."
+                        android:textColor="#D32F2F"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Botón Crear Cuenta (Flujo Manual) -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_crear_cuenta_manual"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:text="Crear Cuenta"
+                        android:textColor="#1F361F"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        app:backgroundTint="#F2BA11"
+                        app:cornerRadius="16dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/tv_divisor_o"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="o"
+                        android:gravity="center"
+                        android:textColor="#1A1A1A"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Botón Registrarse con Google (Progressive Profiling) -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_registrarse_google"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:text="Registrarse con Google"
+                        app:icon="@android:drawable/ic_menu_myplaces"
+                        android:textColor="#1A1A1A"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        app:strokeColor="#DDDDDD"
+                        app:strokeWidth="1dp"
+                        app:cornerRadius="16dp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Botón Back -->
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/retroceder"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="56dp"
+        android:padding="12dp"
+        android:elevation="10dp"
+        android:translationZ="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="Regresar" />
+
+</RelativeLayout>

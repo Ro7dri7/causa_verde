@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/inicio_comp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0F8CB"
+    android:clipToOutline="true">
+
+    <!-- 1. HEADER SUPERIOR FIJO -->
+    <RelativeLayout
+        android:id="@+id/header_superior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#E0F8CB"
+        android:elevation="6dp"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="12dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_alignParentStart="true">
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/logo_inicio"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="Logo" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ubicación"
+                    android:textSize="10sp"
+                    android:textColor="#555555" />
+                <TextView
+                    android:id="@+id/tv_ubicacion_texto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Carabayllo, Lima"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="#1F361F" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_alignParentEnd="true">
+
+            <ImageView
+                android:id="@+id/btn_carrito"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/icon_carrito"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="Carrito" />
+
+            <ImageView
+                android:id="@+id/btn_notificaciones"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/icon_notificacion"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="Notificaciones" />
+
+            <ImageView
+                android:id="@+id/btn_perfil"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/icon_user_profile"
+                android:contentDescription="Perfil" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- 2. BARRA DE NAVEGACIÓN INFERIOR (Fija) -->
+    <LinearLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:background="#F5FCEE"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:paddingHorizontal="16dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/icon_home"
+                android:contentDescription="Inicio" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inicio"
+                android:textSize="11sp"
+                android:textColor="#385B35"
+                android:textStyle="bold"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/icon_pedido"
+                android:contentDescription="Pedidos" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pedidos"
+                android:textSize="11sp"
+                android:textColor="#666666"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/icono_mapa"
+                android:contentDescription="Mapa" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mapa"
+                android:textSize="11sp"
+                android:textColor="#666666"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <FrameLayout
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/bg_pill_paso">
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:src="@android:drawable/ic_menu_search"
+                    android:contentDescription="Buscar" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 3. CONTENIDO PRINCIPAL SCROLLABLE -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_superior"
+        android:layout_above="@id/bottom_nav"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="8dp">
+
+            <TextView
+                android:id="@+id/tv_saludo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¡Hola, Usuario!"
+                android:textSize="14sp"
+                android:textColor="#385B35"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Salva comida rica"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#1F361F"
+                android:layout_marginBottom="12dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#CBE6B4"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="14dp">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/icon_flama"
+                        android:layout_marginEnd="12dp"
+                        android:contentDescription="Oferta" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="3 ofertas vencen hoy!!"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="#1F361F" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="A menos de 500 metros de ti"
+                            android:textSize="12sp"
+                            android:textColor="#385B35" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categorías"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#1F361F"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="4"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <View
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:background="@drawable/bg_pill_paso" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Panadería"
+                        android:textSize="11sp"
+                        android:textColor="#1F361F"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <View
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:background="@drawable/bg_pill_paso" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Postres"
+                        android:textSize="11sp"
+                        android:textColor="#1F361F"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <View
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:background="@drawable/bg_pill_paso" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Criollo"
+                        android:textSize="11sp"
+                        android:textColor="#1F361F"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <View
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:background="@drawable/bg_pill_paso" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Despensa"
+                        android:textSize="11sp"
+                        android:textColor="#1F361F"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Paquetes sorpresas disponibles"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#1F361F" />
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/icon_mas"
+                    android:contentDescription="Ver más" />
+            </LinearLayout>
+
+            <!-- RECYCLERVIEW DINÁMICO PARA LOS PRODUCTOS DE AWS -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_productos_comprador"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:scrollbars="none"
+                android:layout_marginBottom="24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cerca tuyo"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#1F361F" />
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/icon_mas"
+                    android:contentDescription="Ver más" />
+            </LinearLayout>
+
+            <!-- CARD FIJA DE EJEMPLO "Cerca tuyo" -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_cerca_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#F5FCEE"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="1dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#D1E2BC"
+                android:layout_marginBottom="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    android:gravity="center_vertical">
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="#CBE6B4"
+                        android:layout_marginEnd="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Starbucks"
+                            android:textStyle="bold"
+                            android:textColor="#1F361F"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="⭐ 5.0  •  2.5 km  •  Carabayllo  •  9:00 pm"
+                            android:textSize="11sp"
+                            android:textColor="#666666"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="4dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="3 paquetes disponibles"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="#385B35" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

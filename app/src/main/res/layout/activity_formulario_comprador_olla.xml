@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/formulario_olla"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToOutline="true"
+    android:background="#E0F8CB">
+
+    <!-- Fondos decorativos -->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circ1_arriba"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="@string/app_name" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circ2_medio"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:contentDescription="@string/app_name" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circ3_final"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="@string/app_name" />
+
+    <!-- Formulario principal con ScrollView -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:paddingTop="16dp"
+        android:paddingBottom="32dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:gravity="center_horizontal">
+
+            <!-- Logo -->
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@drawable/logo_inicio"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="@string/app_name" />
+
+            <!-- Progreso de pasos -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_marginBottom="8dp"
+                android:paddingHorizontal="16dp">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="6dp"
+                    android:layout_weight="1"
+                    android:background="#F2BA11"
+                    android:layout_marginEnd="8dp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="6dp"
+                    android:layout_weight="1"
+                    android:background="#F2BA11"
+                    android:layout_marginEnd="8dp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="6dp"
+                    android:layout_weight="1"
+                    android:background="#D1E2BC" />
+            </LinearLayout>
+
+            <!-- Pill de paso -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PASO 2 DE 3   •   LLENA TUS DATOS"
+                android:textColor="#1F361F"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_pill_paso"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="6dp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CREAR CUENTA"
+                android:textColor="#385B35"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Tarjeta contenedora del formulario -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#F5FCEE"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="1.5dp"
+                app:strokeColor="#F2BA11"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Badge de tipo -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CUENTA\nComprador Olla Común"
+                        android:textColor="#1A1A1A"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:background="@drawable/bg_pill_paso"
+                        android:paddingHorizontal="24dp"
+                        android:paddingVertical="8dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Nombre y Apellidos (Fila) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:layout_marginBottom="12dp">
+
+                        <EditText
+                            android:id="@+id/et_nombre"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:hint="Nombre"
+                            android:background="#FFFFFF"
+                            android:paddingHorizontal="12dp"
+                            android:layout_marginEnd="6dp"
+                            android:textColor="#1A1A1A"
+                            android:textColorHint="#888888"
+                            android:textSize="14sp"
+                            android:inputType="textPersonName"
+                            android:autofillHints="name" />
+
+                        <EditText
+                            android:id="@+id/et_apellidos"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:hint="Apellidos"
+                            android:background="#FFFFFF"
+                            android:paddingHorizontal="12dp"
+                            android:layout_marginStart="6dp"
+                            android:textColor="#1A1A1A"
+                            android:textColorHint="#888888"
+                            android:textSize="14sp"
+                            android:inputType="textPersonName"
+                            android:autofillHints="familyName" />
+                    </LinearLayout>
+
+                    <!-- Nombre de Olla Común -->
+                    <EditText
+                        android:id="@+id/et_olla_comun"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Nombre de Olla Común"
+                        android:background="#FFFFFF"
+                        android:paddingHorizontal="16dp"
+                        android:layout_marginBottom="12dp"
+                        android:textColor="#1A1A1A"
+                        android:textColorHint="#888888"
+                        android:textSize="14sp"
+                        android:inputType="text"
+                        android:autofillHints="organization" />
+
+                    <!-- Correo electrónico -->
+                    <EditText
+                        android:id="@+id/et_correo"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Correo electrónico"
+                        android:background="#FFFFFF"
+                        android:paddingHorizontal="16dp"
+                        android:layout_marginBottom="12dp"
+                        android:textColor="#1A1A1A"
+                        android:textColorHint="#888888"
+                        android:textSize="14sp"
+                        android:inputType="textEmailAddress"
+                        android:autofillHints="emailAddress" />
+
+                    <!-- Teléfono (Fila con prefijo +51) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="65dp"
+                            android:layout_height="match_parent"
+                            android:text="+51"
+                            android:textColor="#1A1A1A"
+                            android:textSize="14sp"
+                            android:gravity="center"
+                            android:background="#FFFFFF"
+                            android:layout_marginEnd="6dp" />
+
+                        <EditText
+                            android:id="@+id/et_telefono"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="999888777"
+                            android:background="#FFFFFF"
+                            android:paddingHorizontal="16dp"
+                            android:textColor="#1A1A1A"
+                            android:textColorHint="#888888"
+                            android:textSize="14sp"
+                            android:inputType="phone"
+                            android:autofillHints="phone" />
+                    </LinearLayout>
+
+                    <!-- Contraseña Segura -->
+                    <EditText
+                        android:id="@+id/et_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Contraseña Segura"
+                        android:background="#FFFFFF"
+                        android:paddingHorizontal="16dp"
+                        android:layout_marginBottom="12dp"
+                        android:textColor="#1A1A1A"
+                        android:textColorHint="#888888"
+                        android:textSize="14sp"
+                        android:inputType="textPassword"
+                        android:autofillHints="password" />
+
+                    <!-- Repite Contraseña Segura -->
+                    <EditText
+                        android:id="@+id/et_confirm_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Repite Contraseña Segura"
+                        android:background="#FFFFFF"
+                        android:paddingHorizontal="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:textColor="#1A1A1A"
+                        android:textColorHint="#888888"
+                        android:textSize="14sp"
+                        android:inputType="textPassword"
+                        android:autofillHints="password" />
+
+                    <!-- Error opcional -->
+                    <TextView
+                        android:id="@+id/tv_error_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#B00020"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        android:layout_marginBottom="8dp" />
+
+                    <!-- Términos -->
+                    <CheckBox
+                        android:id="@+id/cb_terminos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Al registrarme, declaro que soy mayor de edad, he leído y acepto los Términos y Condiciones y Políticas de Privacidad"
+                        android:textSize="11sp"
+                        android:textColor="#1A1A1A"
+                        android:layout_marginBottom="20dp" />
+
+                    <!-- Botón Crear Cuenta Manual -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_crear_cuenta_manual"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Crear Cuenta"
+                        android:textColor="#1F361F"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        app:backgroundTint="#F2BA11"
+                        app:cornerRadius="16dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Divisor -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="o"
+                        android:textColor="#1A1A1A"
+                        android:textSize="14sp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Botón Google -->
+                    <com.google.android.material.button.MaterialButton
+                        style="?attr/materialButtonOutlinedStyle"
+                        android:id="@+id/btn_registrarse_google"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Registrarse con Google"
+                        android:textColor="#1A1A1A"
+                        android:textSize="15sp"
+                        android:textAllCaps="false"
+                        app:strokeColor="#CCCCCC"
+                        app:cornerRadius="16dp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Botón Back -->
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/retroceder"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="56dp"
+        android:padding="12dp"
+        android:elevation="10dp"
+        android:translationZ="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="Regresar" />
+
+</RelativeLayout>

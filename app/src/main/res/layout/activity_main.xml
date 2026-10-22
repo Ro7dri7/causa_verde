@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/container_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Pin central superpuesto -->
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@android:drawable/ic_menu_mylocation"
+        app:layout_constraintBottom_toBottomOf="@+id/map"
+        app:layout_constraintEnd_toEndOf="@+id/map"
+        app:layout_constraintStart_toStartOf="@+id/map"
+        app:layout_constraintTop_toTopOf="@+id/map"
+        app:layout_constraintVertical_bias="0.45"
+        tools:ignore="ContentDescription" />
+
+    <!-- Botón Back en el Mapa -->
+    <ImageButton
+        android:id="@+id/btn_back_mapa"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/retroceder"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="56dp"
+        android:padding="12dp"
+        android:elevation="10dp"
+        android:translationZ="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="Regresar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Contenedor inferior -->
+    <LinearLayout
+        android:id="@+id/container_bottom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_confirmar_ubicacion"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Confirmar Ubicación"
+            android:textColor="#1F361F"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            app:backgroundTint="#F2BA11"
+            app:cornerRadius="16dp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0F8CB"
+    android:clipToOutline="true">
+
+    <RelativeLayout
+        android:id="@+id/header_crear_producto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#E0F8CB"
+        android:elevation="4dp"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="12dp">
+        <ImageView
+            android:id="@+id/btn_volver"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/retroceder"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            app:tint="#1A1A1A"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toEndOf="@id/btn_volver"
+            android:layout_marginStart="16dp"
+            android:layout_centerVertical="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tienda Supermercado"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#1F361F" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inventario"
+                android:textSize="12sp"
+                android:textColor="#1F361F" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_crear_producto"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="40dp">
+
+            <TextView
+                android:id="@+id/tv_etiqueta_rol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_pill_paso"
+                android:backgroundTint="#F2BA11"
+                android:text="DONADOR REGULAR"
+                android:textColor="#1F361F"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Publicar Producto"
+                android:textAlignment="center"
+                android:background="@drawable/bg_pill_paso"
+                android:backgroundTint="#F2BA11"
+                android:textColor="#1A1A1A"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:paddingVertical="12dp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- SECCIÓN 1: FOTO -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_foto_producto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#F5FCEE"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="0dp"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:focusable="true">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Foto del Producto"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="#1A1A1A"
+                        android:layout_marginBottom="12dp"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:background="@drawable/bg_pill_paso"
+                        android:backgroundTint="#D6EED0">
+
+                        <ImageView
+                            android:id="@+id/iv_foto_producto_preview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"/>
+
+                        <LinearLayout
+                            android:id="@+id/ll_placeholder_foto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@android:drawable/ic_menu_camera"
+                                app:tint="#1A1A1A"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Toca para tomar foto o subir foto"
+                                android:textColor="#1A1A1A"
+                                android:textSize="12sp"
+                                android:layout_marginTop="8dp"/>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SECCIÓN 2: DATOS BÁSICOS -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#F5FCEE"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="0dp"
+                android:layout_marginBottom="16dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nombre del Producto"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="#1A1A1A" />
+                    <EditText
+                        android:id="@+id/et_nombre_producto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_pill_paso"
+                        android:backgroundTint="#D6EED0"
+                        android:padding="12dp"
+                        android:layout_marginTop="8dp"
+                        android:hint="Ej. Pan Blanco Bimbo"
+                        android:textColor="#1A1A1A"
+                        android:textColorHint="#555555"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Estado del Producto"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="#1A1A1A"
+                        android:layout_marginTop="16dp" />
+                    <EditText
+                        android:id="@+id/et_estado_producto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_pill_paso"
+                        android:backgroundTint="#D6EED0"
+                        android:padding="12dp"
+                        android:layout_marginTop="8dp"
+                        android:hint="Ej. Empaque con pliegue menor..."
+                        android:textColor="#1A1A1A"
+                        android:textColorHint="#555555"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SECCIÓN 3: PRECIOS -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_seccion_precios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#F5FCEE"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="0dp"
+                android:layout_marginBottom="16dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Precio y Descuento"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:textColor="#1A1A1A" />
+                        <TextView
+                            android:id="@+id/tv_porcentaje_calculado"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:background="@drawable/bg_pill_paso"
+                            android:backgroundTint="#8CB82A"
+                            android:text="-0% Recomendado"
+                            android:textColor="#1A1A1A"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="4dp" />
+                    </RelativeLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:layout_marginTop="16dp">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="8dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Normal Tienda (S/)"
+                                android:textSize="12sp"
+                                android:textColor="#555555" />
+                            <EditText
+                                android:id="@+id/et_precio_normal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="numberDecimal"
+                                android:background="@drawable/bg_pill_paso"
+                                android:backgroundTint="#ECEFE9"
+                                android:padding="12dp"
+                                android:layout_marginTop="4dp"
+                                android:text="0.00"
+                                android:textColor="#1A1A1A"
+                                android:textColorHint="#555555"
+                                android:textSize="16sp"
+                                android:textStyle="bold"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginStart="8dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rescate Verde (S/)"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:textColor="#385B35" />
+                            <EditText
+                                android:id="@+id/et_precio_rescate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="numberDecimal"
+                                android:background="@drawable/bg_pill_paso"
+                                android:backgroundTint="#C0EBE8"
+                                android:padding="12dp"
+                                android:layout_marginTop="4dp"
+                                android:text="0.00"
+                                android:textColor="#1A1A1A"
+                                android:textColorHint="#555555"
+                                android:textSize="16sp"
+                                android:textStyle="bold"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SECCIÓN 4: RETIRO Y TRAZABILIDAD (NUEVOS CAMPOS AÑADIDOS) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#F5FCEE"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="0dp"
+                android:layout_marginBottom="24dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Retiro y Trazabilidad"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="#1A1A1A"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Límite de Retiro -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Límite de Retiro Hoy"
+                        android:textSize="12sp"
+                        android:textColor="#1A1A1A" />
+                    <EditText
+                        android:id="@+id/et_limite_retiro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_pill_paso"
+                        android:backgroundTint="#ECEFE9"
+                        android:padding="12dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Ej. 08:30 PM"
+                        android:textColor="#1A1A1A"
+                        android:textColorHint="#555555"
+                        android:textSize="14sp"
+                        android:drawableStart="@android:drawable/ic_menu_recent_history"
+                        android:drawablePadding="8dp"/>
+
+                    <!-- Fecha de Vencimiento -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fecha de Vencimiento"
+                        android:textSize="12sp"
+                        android:textColor="#1A1A1A" />
+                    <EditText
+                        android:id="@+id/et_fecha_vencimiento"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_pill_paso"
+                        android:backgroundTint="#ECEFE9"
+                        android:padding="12dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Ej. 05/26/2024"
+                        android:textColor="#1A1A1A"
+                        android:textColorHint="#555555"
+                        android:textSize="14sp"
+                        android:drawableStart="@android:drawable/ic_menu_my_calendar"
+                        android:drawablePadding="8dp"/>
+
+                    <!-- Lote BAP -->
+                    <LinearLayout
+                        android:id="@+id/container_lote_auditoria"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="8dp">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nº de Lote (Auditoría BAP)"
+                                android:textSize="12sp"
+                                android:textColor="#1A1A1A" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:text="Obligatorio"
+                                android:textStyle="bold"
+                                android:textColor="#B3261E"
+                                android:textSize="10sp" />
+                        </RelativeLayout>
+                        <EditText
+                            android:id="@+id/et_lote_bap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_pill_paso"
+                            android:backgroundTint="#ECEFE9"
+                            android:padding="12dp"
+                            android:layout_marginTop="4dp"
+                            android:hint="Ej. L-84920-B"
+                            android:textColor="#1A1A1A"
+                            android:textColorHint="#555555"
+                            android:textSize="14sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- BOTONES FINALES -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_cancelar"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="Cancelar"
+                    android:textColor="#1A1A1A"
+                    app:backgroundTint="#F5FCEE"
+                    app:cornerRadius="28dp" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_publicar"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="Publicar"
+                    android:textColor="#1A1A1A"
+                    app:backgroundTint="#8CB82A"
+                    app:cornerRadius="28dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

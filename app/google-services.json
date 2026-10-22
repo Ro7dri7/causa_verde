@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "75065692265",
+    "project_id": "causa-verde",
+    "storage_bucket": "causa-verde.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75065692265:android:840678393812ce70b412f8",
+        "android_client_info": {
+          "package_name": "com.example.causa_verde"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "75065692265-f7otsh7jn8qka0n0kcbsjfic110khgio.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.causa_verde",
+            "certificate_hash": "7456dfa180cc349b52b161c97bc8457b5fe2d8ec"
+          }
+        },
+        {
+          "client_id": "75065692265-r4c9btpgao6p5ia2kg4k8p4a0k5j3ejh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCigjuQSfKDUbgw2Jczs7NmBCKWQfVnEHM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "75065692265-r4c9btpgao6p5ia2kg4k8p4a0k5j3ejh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="260dp"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="#F5FCEE"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="1dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="#D1E2BC"
+    android:layout_marginEnd="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Cabecera con Categoría -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/logo_inicio"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/tv_categoria_comprador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categoría"
+                android:textStyle="bold"
+                android:textColor="#1F361F"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Imagen del producto (Cargada desde AWS S3 con Glide) -->
+        <ImageView
+            android:id="@+id/iv_foto_comprador"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:scaleType="centerCrop"
+            android:background="#CBE6B4"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="Imagen del producto" />
+
+        <!-- Precios (Oferta y Regular) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="4dp">
+
+            <TextView
+                android:id="@+id/tv_precio_oferta_comprador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="S/0.00"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#1F361F"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/tv_precio_regular_comprador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="S/0.00"
+                android:textSize="12sp"
+                android:textColor="#888888" />
+        </LinearLayout>
+
+        <!-- Nombre del Producto / Título -->
+        <TextView
+            android:id="@+id/tv_nombre_comprador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre del producto"
+            android:textSize="12sp"
+            android:textColor="#555555"
+            android:maxLines="2"
+            android:ellipsize="end" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

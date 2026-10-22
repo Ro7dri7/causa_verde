@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="#EAF9DC"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Parte Superior: Foto, Textos y Switch -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <!-- Contenedor de Imagen y Etiqueta -->
+            <RelativeLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="12dp">
+
+                <!-- ID AGREGADO AQUÍ PARA GLIDE -->
+                <ImageView
+                    android:id="@+id/iv_imagen_producto_tarjeta"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#D6EED0"
+                    android:scaleType="centerCrop" />
+
+                <!-- Etiqueta de descuento -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-42%"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="#1F361F"
+                    android:background="@drawable/bg_pill_paso"
+                    android:backgroundTint="#8CB82A"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="2dp"
+                    android:layout_margin="6dp"/>
+            </RelativeLayout>
+
+            <!-- Textos -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!-- ID AGREGADO PARA LA CATEGORÍA -->
+                <TextView
+                    android:id="@+id/tv_categoria_producto_tarjeta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Panadería y Masas"
+                    android:textColor="#8B4513"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <!-- ID AGREGADO PARA EL TÍTULO -->
+                <TextView
+                    android:id="@+id/tv_titulo_producto_tarjeta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pan Integral Bimbo 550g"
+                    android:textColor="#1A1A1A"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🕐 Vence hoy 20:30"
+                    android:textColor="#555555"
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="4dp"
+                    android:gravity="bottom">
+
+                    <!-- ID AGREGADO PARA EL PRECIO -->
+                    <TextView
+                        android:id="@+id/tv_precio_producto_tarjeta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="S/ 3.50"
+                        android:textColor="#1A1A1A"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginEnd="6dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="S/ 6.00"
+                        android:textColor="#888888"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Switch Activo/Inactivo -->
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                app:thumbTint="#FFFFFF"
+                app:trackTint="#8CB82A" />
+        </LinearLayout>
+
+        <!-- Parte Inferior: Stock y Botones (Fondo verde un poco más oscuro) -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#C3E1B9"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_alignParentStart="true">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stock:"
+                    android:textColor="#555555"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="8dp" />
+
+                <!-- Selector de cantidad -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_pill_paso"
+                    android:backgroundTint="#FFFFFF"
+                    android:paddingHorizontal="4dp"
+                    android:paddingVertical="2dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:text="-"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:textColor="#1A1A1A"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4 un."
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A1A1A"
+                        android:paddingHorizontal="8dp"/>
+                    <TextView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:text="+"
+                        android:background="@drawable/bg_pill_paso"
+                        android:backgroundTint="#8CB82A"
+                        android:textSize="16sp"
+                        android:gravity="center"
+                        android:textColor="#1A1A1A"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_alignParentEnd="true">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="@drawable/bg_pill_paso"
+                    android:backgroundTint="#FFFFFF"
+                    android:src="@android:drawable/ic_menu_edit"
+                    android:padding="6dp"
+                    app:tint="#555555"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Publicado"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="#1F361F"
+                    android:background="@drawable/bg_pill_paso"
+                    android:backgroundTint="#B0E0E6"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="6dp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

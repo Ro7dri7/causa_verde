@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0F8CB">
+
+    <!-- Fragmento del Mapa (ocupa toda la pantalla) -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Botón Atrás Flotante -->
+    <ImageButton
+        android:id="@+id/btn_back_mapa"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/retroceder"
+        android:elevation="8dp"
+        android:translationZ="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="Regresar" />
+
+    <!-- Barra de búsqueda superior -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_search_bar"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_back_mapa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_back_mapa"
+        app:layout_constraintTop_toTopOf="@+id/btn_back_mapa">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp">
+
+            <EditText
+                android:id="@+id/et_search_address"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="Buscar dirección (Ej. Lima)"
+                android:imeOptions="actionSearch"
+                android:inputType="textPostalAddress"
+                android:maxLines="1"
+                android:textColor="#1A1A1A"
+                android:textColorHint="#888888"
+                android:textSize="14sp" />
+
+            <ImageButton
+                android:id="@+id/btn_search_address"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Buscar"
+                android:src="@android:drawable/ic_menu_search"
+                app:tint="#385B35" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Marcador central (Pin) -->
+    <!-- Se usa translationY para que la punta del pin apunte al centro exacto -->
+    <ImageView
+        android:id="@+id/iv_center_pin"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:translationY="-24dp"
+        android:elevation="8dp"
+        android:src="@android:drawable/ic_menu_mylocation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#D32F2F"
+        tools:ignore="ContentDescription" />
+
+    <!-- Progress Bar (Oculto por defecto) -->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="12dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Botón de Confirmación inferior -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_confirmar_registro"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="32dp"
+        android:elevation="8dp"
+        android:translationZ="8dp"
+        android:text="Confirmar Registro y Ubicación"
+        android:textAllCaps="false"
+        android:textColor="#1F361F"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="#F2BA11"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

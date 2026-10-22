@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Causa Verde</string>
+    <!-- Coloca aquí tu Web Client ID generado por Google Services (consola de Firebase o GCP) -->
+    <string name="default_web_client_id">TU_WEB_CLIENT_ID_AQUI</string>
+</resources>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToOutline="true"
+    android:background="#E0F8CB">
+
+    <!-- Fondos decorativos -->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circ1_arriba"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circ2_medio"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circ3_final"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <!-- Contenedor inferior (Botones y Textos legales) -->
+    <LinearLayout
+        android:id="@+id/contenedor_inferior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:paddingHorizontal="32dp"
+        android:paddingBottom="48dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_crear_cuenta"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Crear Cuenta"
+            android:textColor="#2A4222"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            app:backgroundTint="#F2BA11"
+            app:cornerRadius="16dp"
+            android:layout_marginBottom="16dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_iniciar_sesion"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Iniciar Sesión"
+            android:textColor="#385B35"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            app:strokeColor="#F2BA11"
+            app:strokeWidth="1.5dp"
+            app:cornerRadius="16dp"
+            android:layout_marginBottom="24dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Al continuar, aceptas nuestros Términos y Condiciones y reconoces nuestra Política de Privacidad."
+            android:textColor="#1A1A1A"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp" />
+    </LinearLayout>
+
+    <!-- Contenedor principal central (Logo, textos e íconos) -->
+    <!-- Se alinea encima del contenedor de botones para ser responsivo -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/contenedor_inferior"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingHorizontal="24dp">
+
+        <!-- Logo principal -->
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/logo_inicio"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Títulos -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Salva comida deliciosa,"
+            android:textColor="#F2BA11"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="protege el planeta"
+            android:textColor="#385B35"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Subtítulo -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cada platillo rescatado es un paso hacia un\nmundo sin desperdicio y con mucho más sabor"
+            android:textColor="#1A1A1A"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginBottom="40dp" />
+
+        <!-- Fila de Íconos -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="false"
+            android:weightSum="3"
+            android:paddingHorizontal="16dp">
+
+            <!-- Ícono Busca -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/lupa_inicio"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BUSCA"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Ícono Reserva -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/reserva_inicio"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RESERVA"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Ícono Salva -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/icon_salva_inicio"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SALVA"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

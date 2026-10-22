@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://tools.android.com/tools">
+
+    <!-- Permisos de Red y Ubicación -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Permisos de Cámara -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Permisos de Almacenamiento / Galería compatibles con Android 13+ -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+
+    <!-- Permiso para que Android 11+ permita abrir la app de cámara nativa -->
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Causa_verde"
+        android:usesCleartextTraffic="true">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDpbA7Ql63Zl6176zn-iA59Oq9QGzzEh9w" />
+
+        <!-- Actividad de Bienvenida / Inicio -->
+        <activity
+            android:name=".InicioActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".RegistroRolActivity" android:exported="false" />
+        <activity android:name=".RegistroCompradorActivity" android:exported="false" />
+        <activity android:name=".RegistroDonadorActivity" android:exported="false" />
+
+        <!-- Pantalla de Credenciales / Login -->
+        <activity android:name=".LoginActivity" android:exported="false" />
+
+        <!-- Pantallas principales -->
+        <activity android:name=".InicioCompradorActivity" android:exported="false" />
+        <activity android:name=".InicioDonadorActivity" android:exported="false" />
+        <activity android:name=".InventarioActivity" android:exported="false" />
+
+        <!-- Pantalla para Crear Producto -->
+        <activity android:name=".CrearProductoDonadorActivity" android:exported="false" />
+
+        <!-- Formularios y otras vistas -->
+        <activity android:name=".FormularioCompradorRegularActivity" android:exported="false" />
+        <activity android:name=".FormularioCompradorOllaActivity" android:exported="false" />
+        <activity android:name=".FormularioDonadorActivity" android:exported="false" />
+        <activity android:name=".VerificacionBapActivity" android:exported="false" />
+        <activity android:name=".MapaUbicacionActivity" android:exported="false" />
+        <activity android:name=".DashboardActivity" android:exported="false" />
+    </application>
+
+</manifest>
